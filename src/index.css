@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-800 font-sans;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6;
+  }
+  .section-title {
+    @apply text-lg font-semibold text-gray-800 flex items-center gap-2 mb-4;
+  }
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all;
+  }
+  .label {
+    @apply block text-xs font-medium text-gray-600 mb-1;
+  }
+  .metric-card {
+    @apply bg-white rounded-lg p-4 border border-gray-100 shadow-sm;
+  }
+  .btn-primary {
+    @apply bg-teal-600 hover:bg-teal-700 text-white font-medium px-5 py-2.5 rounded-lg transition-colors flex items-center gap-2 text-sm;
+  }
+  .btn-secondary {
+    @apply bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium px-5 py-2.5 rounded-lg transition-colors flex items-center gap-2 text-sm;
+  }
+  .btn-danger {
+    @apply bg-red-50 hover:bg-red-100 text-red-600 font-medium px-4 py-2 rounded-lg transition-colors flex items-center gap-2 text-sm;
+  }
+  .badge-green {
+    @apply bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-yellow {
+    @apply bg-amber-50 text-amber-700 border border-amber-200 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-red {
+    @apply bg-red-50 text-red-700 border border-red-200 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-gray {
+    @apply bg-gray-50 text-gray-600 border border-gray-200 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white !important;
+    font-size: 11pt;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    break-inside: avoid;
+  }
+  nav, header .no-print {
+    display: none !important;
+  }
+  .print-break {
+    page-break-before: always;
+  }
+  #root > div > nav {
+    display: none !important;
+  }
+}
